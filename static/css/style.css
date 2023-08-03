@@ -21,7 +21,7 @@ html, body {
 
 body {
     font-family: 'Oswald', sans-serif !important;
-  }
+}
 
 #home, #about, #projects, #contact {
     min-height: 80vh;  /* or 100vh to take full height */
