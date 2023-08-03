@@ -83,3 +83,36 @@ body {
     }
   }
   
+
+
+.hover-shadow:hover {
+    transform: scale(1.05);
+    transition: transform .2s;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.project-img {
+    height: 600px;   /* Adjust as needed */
+    object-fit: cover;  /* This will ensure the images cover the entire dimension */
+}
+
+
+.fixed-card-body {
+  height: 175px;  /* adjust this value according to your need */
+  overflow: hidden;  /* prevents overflow of text */
+}
+
+
+.custom-card-link {
+  color: inherit;  /* Reset link color to inherit from parent */
+  text-decoration: none;  /* Remove the underline */
+}
+
+.custom-card-link:hover {
+  color: inherit;  /* Ensure color remains unchanged on hover */
+}
+
+.custom-card-link .card-title,
+.custom-card-link .card-text {
+  color: inherit;  /* This ensures the text inside the card inherits its original color */
+}

@@ -22,18 +22,21 @@
         <!-- Side Navbar -->
         <div id="sidebar" class="d-flex flex-column flex-shrink-0 p-3 text-white col-md-3 col-lg-2">
             <div class="card bg-dark border-light">
-                <div class="card-body">
-                    <span class="fs-4">Jacob Neel</span>
-                    <!-- GitHub Icon -->
-                    <a href="https://github.com/link2427" target="_blank">
-                        <i class="fab fa-github fa-lg" style="color: white; margin-left: 10px;"></i>
-                    </a>
-                    <!-- LinkedIn Icon -->
-                    <a href="https://www.linkedin.com/in/jacob-neel-279b3b228/" target="_blank">
-                        <i class="fab fa-linkedin fa-lg" style="color: white; margin-left: 10px;"></i>
-                    </a>
+                <div class="card-body d-flex flex-column align-items-start"> <!-- Add flex column direction -->
+                    <span class="fs-4 mb-2">Jacob Neel</span> <!-- Add some margin at the bottom for spacing -->
+                    <div>
+                        <!-- GitHub Icon -->
+                        <a href="https://github.com/link2427" target="_blank">
+                            <i class="fab fa-github fa-lg" style="color: white; margin-right: 10px;"></i> <!-- Adjust margin to right for consistency -->
+                        </a>
+                        <!-- LinkedIn Icon -->
+                        <a href="https://www.linkedin.com/in/jacob-neel-279b3b228/" target="_blank">
+                            <i class="fab fa-linkedin fa-lg" style="color: white; margin-left: 10px;"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+            
             <hr>
             <ul class="nav nav-pills flex-column mb-auto bg-transparent">
                 <li class="nav-item">
@@ -62,63 +65,154 @@
                 </li>
             </ul>
         </div>
-        <!-- Main Content Area -->
-        <div class="col-12 col-md-9 offset-md-3 col-lg-8 offset-lg-2">
-            <div class="container">
-                <div class="row justify-content-center" style="margin-top:50px;">
-                    <section id="home" class="text-white">
-                        <h1 class="display-1">Jacob Neel</h1>
-                        <p>Software Engineer</p>
-                    </section>
-                </div>
+
+
+    <!-- Main Content Area -->
+    <div class="col-12 col-md-9 offset-md-3 col-lg-8 offset-lg-2">
+        <div class="container mt-4">
+
+            <!-- Home Section -->
+            <div class="row justify-content-center mb-5">
+                <section id="home" class="text-white">
+                    <h1 class="display-1">Jacob Neel</h1>
+                    <p>Software Engineer</p>
+                </section>
             </div>
-            <div class="container">
+
+            <!-- About Me Section -->
+            <section id="about" class="text-white mb-5">
+                <h2>About Me</h2>
+                <div class="row mt-3">
+                    <div class="col-lg-4">
+                        <img src="{{ url_for('static', filename= 'images/me.jfif') }}" alt="Jacob Neel" style="width: 100%;">
+                    </div>
+                    <div class="col-lg-8">
+                        <p>I am a Junior at UAH majoring in Computer Science. I am currently working as a Technical Intern at KODA Technologies. 
+                            I have developed a strong programming and problem-solving foundation. I have completed coursework in data structures, algorithms, computer organization, and software engineering. I have gained 
+                            hands-on experience from my internship at KODA Technologies and various personal projects.
+                        </p>
+                        <p><strong>Email:</strong> jdn0007@uah.edu</p>
+                        <p><strong>Degree:</strong> Bachelors in Computer Science</p>
+                        <p><strong>City:</strong> Huntsville</p>
+                        <p><strong>State:</strong> Alabama</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="text-white mb-5">
                 <div class="row justify-content-center">
-                    <section id="about" class="text-white">
-                        <h2>About Me</h2>
-                        <div class="card bg-dark border-light">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <img src="{{ url_for('static', filename= 'images/me.jfif') }}" alt="Jacob Neel" style="width: 100%;">
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <h2>Jacob Neel</h2>
-                                        <p>I am a Junior at UAH majoring in Computer Science. I am currently working as a Technical Intern at KODA Technologies. 
-                                            I have developed a strong programming and problem-solving foundation. I have completed coursework in data structures, algorithms, computer organization, and software engineering. I have gained 
-                                            hands-on experience from my internship at KODA Technologies and various personal projects.
-                                        </p>
-                                        <p><strong>Email:</strong> jdn0007@uah.edu</p>
-                                        <p><strong>Degree:</strong> Bachelors in Computer Science</p>
-                                        <p><strong>City:</strong> Huntsville</p>
-                                        <p><strong>State:</strong> Alabama</p>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="card bg-dark border-light mb-5">
+                        <!-- Terminal header bar -->
+                        <div class="card-header bg-secondary text-light">
+                            <span>[root@localhost ~]$</span>
                         </div>
-                    </section>
+                        <div class="card-body">
+                            <pre style="color: yellow; margin: 0;">
+____________ _____   ___ _____ _____ _____ _____ 
+| ___ \ ___ \  _  | |_  |  ___/  __ \_   _/  ___|
+| |_/ / |_/ / | | |   | | |__ | /  \/ | | \ `--. 
+|  __/|    /| | | |   | |  __|| |     | |  `--. \
+| |   | |\ \\ \_/ /\__/ / |___| \__/\ | | /\__/ /
+\_|   \_| \_|\___/\____/\____/ \____/ \_/ \____/ 
+                            </pre>
+                        </div>
+                    </div>
                 </div>
+        <!-- Project Cards -->
+        <div class="row mt-2 justify-content-center overflow-auto">
+            <!-- Project 1 -->
+            <div class="col-12 col-md-3 mx-2">
+                <a href="https://phneelgroup.com/software/urbansift" class="custom-card-link">
+                    <div class="card bg-dark border-light hover-shadow mb-2">
+                        <img src="static/images/urban_sift.png" alt="Project 1" class="project-img card-img-top">
+                        <div class="card-body fixed-card-body">
+                            <h5 class="card-title">Urbansift</h5>
+                            <p class="card-text">A sophisticated app that seamlessly connects users with top-tier dining, events, and bars in urban locales.</p>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <section id="projects" class="text-white">
-                        <h2>Projects</h2>
-                        <img src="{{ url_for('static', filename= 'images/projects.png') }}" alt="Jacob Neel" style="width: 100%; margin-bottom:25px;">
-                        <p>Work in progress...</p>
-                    </section>
+
+            <!-- Project 2 -->
+            <div class="col-12 col-md-3 mx-2">
+                <a href="https://github.com/link2427/Aeroscape" class="custom-card-link">
+                    <div class="card bg-dark border-light hover-shadow mb-2">
+                        <img src="static/images/aeroscape.png" alt="Project 2" class="project-img card-img-top">
+                        <div class="card-body fixed-card-body">
+                            <h5 class="card-title">Aeroscape</h5>
+                            <p class="card-text">A 2D grid game inspired by Factorio, with resource gathering, structure building, and tactical defense.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-12 col-md-3 mx-2">
+                <a href="#" class="custom-card-link">
+                    <div class="card bg-dark border-light hover-shadow mb-2">
+                        <img src="static/images/satellite_simulation.gif" alt="Project 3" class="project-img card-img-top">
+                        <div class="card-body fixed-card-body">
+                            <h5 class="card-title">STARSCAPE</h5>
+                            <p class="card-text">An advanced platform for satellite tracking, offers precision, in-depth analytics, and detailed rendering.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+            
+            
+        <!-- Contact Me Section -->
+        <section id="contact" class="text-white mb-5">
+            <div class="row justify-content-center">
+                <div class="card bg-dark border-light mb-5">
+                    <!-- Terminal header bar -->
+                    <div class="card-header bg-secondary text-light">
+                        <span>[root@localhost ~]$</span>
+                    </div>
+                    <div class="card-body">
+                        <pre style="color: yellow; margin: 0;">
+_____  _____  _   _  _____   ___   _____  _____ 
+/  __ \|  _  || \ | ||_   _| / _ \ /  __ \|_   _|
+| /  \/| | | ||  \| |  | |  / /_\ \| /  \/  | |
+| |    | | | || . ` |  | |  |  _  || |      | |
+| \__/\\ \_/ /| |\  |  | |  | | | || \__/\  | |
+\____/ \___/ \_| \_/  \_/  \_| |_/ \____/  \_/
+                        </pre>
+                        <div id="terminalOutput">
+                        </div>
+                        <div id="contactFormDiv" style="display:none;">
+                            <form action="your_contact_endpoint_here" method="post" class="mt-3">
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message:</label>
+                                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </form>
+                        </div>
+                        <button id="contactBtn" class="btn btn-secondary">Contact</button>
+                    </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="row justify-content-center">
-                    <section id="contact" class="text-white">
-                        <h2>Contact</h2>
-                        <p>Work in progress...</p>
-                    </section>
-                </div>
-            </div>
+    </div>
+</section>
+
+
         </div>
     </div>
 </div>
+
+
+
 
 <script>
     function scrollToSection(sectionId) {
@@ -127,6 +221,45 @@
             section.scrollIntoView({ behavior: 'smooth' });
         }
     }
+
+    $(document).ready(function() {
+    $("#contactBtn").on("click", function() {
+        $("#contactBtn").hide();  // Hide the Contact button
+
+        let animationLines = [
+            "Initiating email protocol...",
+            "> Please wait...",
+            "> Fetching contact form...",
+            "\n"
+        ];
+
+        let currentLine = 0;
+        let i = 0;
+
+        let interval = setInterval(function() {
+            $("#terminalOutput").append(animationLines[currentLine][i]);
+            i++;
+            
+            if (i >= animationLines[currentLine].length) {
+                $("#terminalOutput").append("<br>");  // New line after completing a line
+                currentLine++;
+                i = 0;
+            }
+
+            if (currentLine >= animationLines.length) {
+                clearInterval(interval);
+                showContactForm();
+            }
+        }, 50);  // Speed of typing animation
+    });
+});
+
+function showContactForm() {
+    $("#contactFormDiv").show();
+}
+
+
+
 </script>
 
 <script src="{{ url_for('static', filename= 'js/particles_js_config.js') }}"></script>
